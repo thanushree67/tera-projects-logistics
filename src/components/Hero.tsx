@@ -29,13 +29,14 @@ export function Hero() {
 
       <div className="container-x relative flex min-h-[100svh] flex-col justify-center pt-32 pb-24">
         <motion.span
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="eyebrow"
-        >
-          001 — Warehouse Division
-        </motion.span>
+  initial={{ opacity: 0, y: 8 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  /* Added text-2xl (larger) and font-medium for a premium look */
+  className="eyebrow text-2xl font-medium tracking-widest uppercase"
+>
+  001 — Tera Warehousing
+</motion.span>
 
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
