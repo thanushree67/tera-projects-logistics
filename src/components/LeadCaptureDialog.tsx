@@ -85,7 +85,7 @@ export function LeadCaptureDialog({ open, onClose, source = "popup" }: Props) {
           exit={{ opacity: 0 }}
         >
           <div
-            className="absolute inset-0 bg-navy-deep/80 backdrop-blur-sm"
+            className="absolute inset-0 bg-ink-deep/85 backdrop-blur-sm"
             onClick={onClose}
             aria-hidden
           />
@@ -93,31 +93,40 @@ export function LeadCaptureDialog({ open, onClose, source = "popup" }: Props) {
             role="dialog"
             aria-modal="true"
             aria-labelledby="lead-title"
-            className="relative w-full max-w-md rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-[var(--shadow-elegant)]"
+            className="relative w-full max-w-md overflow-hidden rounded-[2px] border border-cream/10 bg-card p-7 shadow-[var(--shadow-elegant)] sm:p-9"
             initial={{ y: 30, scale: 0.96, opacity: 0 }}
             animate={{ y: 0, scale: 1, opacity: 1 }}
             exit={{ y: 20, scale: 0.97, opacity: 0 }}
-            transition={{ type: "spring", stiffness: 240, damping: 24 }}
+            transition={{ type: "spring", stiffness: 240, damping: 26 }}
           >
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full opacity-30 blur-3xl"
+              style={{ background: "radial-gradient(circle, var(--brass) 0%, transparent 60%)" }}
+            />
+
             <button
               onClick={onClose}
-              className="absolute right-4 top-4 rounded-md p-1.5 text-muted-foreground transition hover:bg-muted hover:text-foreground"
+              className="absolute right-4 top-4 rounded-full p-1.5 text-cream/60 transition hover:bg-cream/10 hover:text-cream"
               aria-label="Close"
             >
               <X className="h-4 w-4" />
             </button>
 
-            <div className="mb-1 inline-flex items-center gap-2 rounded-full border border-teal/30 bg-teal/10 px-3 py-1 text-xs uppercase tracking-widest text-teal">
-              <ShieldCheck className="h-3.5 w-3.5" /> Tera Projects
+            <div className="font-mono text-[10px] uppercase tracking-[0.28em] text-brass">
+              / Tera Projects
             </div>
-            <h2 id="lead-title" className="mt-3 text-2xl font-semibold">
-              Request a Logistics Quote
+            <h2
+              id="lead-title"
+              className="mt-3 font-display text-3xl leading-tight text-cream"
+            >
+              Start a <span className="italic text-brass">conversation</span>.
             </h2>
-            <p className="mt-1 text-sm text-muted-foreground">
+            <p className="mt-2 text-sm leading-relaxed text-cream/65">
               Share your details and our specialists will respond within one business day.
             </p>
 
-            <form onSubmit={handleSubmit} className="mt-6 space-y-4" noValidate>
+            <form onSubmit={handleSubmit} className="mt-7 space-y-5" noValidate>
               <Field
                 label="Full Name"
                 value={form.name}
@@ -145,17 +154,20 @@ export function LeadCaptureDialog({ open, onClose, source = "popup" }: Props) {
               <button
                 type="submit"
                 disabled={submitting}
-                className="group inline-flex w-full items-center justify-center gap-2 rounded-md bg-[image:var(--gradient-accent)] px-5 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-elegant)] transition hover:brightness-110 disabled:opacity-60"
+                className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-brass/50 bg-brass px-6 py-3.5 text-sm font-medium text-primary-foreground transition hover:brightness-105 disabled:opacity-60"
               >
                 {submitting ? (
                   <>
                     <Loader2 className="h-4 w-4 animate-spin" /> Submitting…
                   </>
                 ) : (
-                  "Get My Quote"
+                  <>
+                    Enquire Us
+                    <ShieldCheck className="h-3.5 w-3.5 opacity-80" />
+                  </>
                 )}
               </button>
-              <p className="text-center text-[11px] text-muted-foreground">
+              <p className="text-center text-[11px] leading-relaxed text-cream/45">
                 By submitting, you agree to be contacted by Tera Projects regarding your enquiry.
               </p>
             </form>
@@ -183,7 +195,7 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-muted-foreground">
+      <span className="mb-1.5 block font-mono text-[10px] uppercase tracking-[0.22em] text-cream/55">
         {label}
       </span>
       <input
@@ -191,7 +203,7 @@ function Field({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         autoComplete={autoComplete}
-        className="w-full rounded-md border border-input bg-background/40 px-3 py-2.5 text-sm outline-none transition focus:border-teal focus:ring-2 focus:ring-teal/30"
+        className="w-full rounded-[2px] border border-cream/15 bg-cream/[0.03] px-3.5 py-3 text-sm text-cream outline-none transition focus:border-brass focus:bg-cream/[0.06] focus:ring-2 focus:ring-brass/25"
       />
       {error && <span className="mt-1 block text-xs text-destructive">{error}</span>}
     </label>
