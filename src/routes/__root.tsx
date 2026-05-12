@@ -83,14 +83,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Tera Projects · Strategic Warehousing & Global Distribution" },
+      { title: "Tera Warehousing" },
       {
         name: "description",
         content:
           "Tera Projects Warehouse Division — precision logistics, secure storage and multimodal distribution for heavy-lift and general cargo.",
       },
       { name: "theme-color", content: "#1A1F2C" },
-      { property: "og:title", content: "Tera Projects · Strategic Warehousing & Global Distribution" },
+      { property: "og:title", content: "Tera Warehousing" },
       {
         property: "og:description",
         content:
@@ -98,7 +98,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Tera Projects · Strategic Warehousing & Global Distribution" },
+      { name: "twitter:title", content: "Tera Warehousing" },
       { name: "description", content: "Tera Projects Logistics provides strategic warehousing and global distribution services." },
       { property: "og:description", content: "Tera Projects Logistics provides strategic warehousing and global distribution services." },
       { name: "twitter:description", content: "Tera Projects Logistics provides strategic warehousing and global distribution services." },
