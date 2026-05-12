@@ -166,7 +166,7 @@ function ContactPage() {
                 disabled={submitting}
                 className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-[image:var(--gradient-accent)] px-5 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-elegant)] transition hover:brightness-110 disabled:opacity-60 sm:w-auto"
               >
-                {submitting ? "Sending…" : "Send Enquiry"}
+                {submitting ? "Sending…" : "Enquire Us"}
               </button>
             </motion.form>
           </div>
