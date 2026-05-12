@@ -1,5 +1,12 @@
 {
   "buildCommand": "npm run build",
   "framework": null,
-  "outputDirectory": ".vercel/output"
+  "functions": {
+    "dist/server/index.js": {
+      "runtime": "nodejs20.x"
+    }
+  },
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/dist/server/index.js" }
+  ]
 }
