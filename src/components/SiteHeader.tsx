@@ -29,7 +29,7 @@ export function SiteHeader() {
     >
       <div className="container-x flex h-20 items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Tera Projects" className="h-8 w-auto" />
+          <img src={logo} alt="Tera Projects" className="h-16 w-auto" />
           <span className="hidden font-mono text-[10px] uppercase tracking-[0.28em] text-cream/60 sm:inline">
             / Warehouse Division
           </span>
