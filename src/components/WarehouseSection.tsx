@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { PackageOpen, ShieldCheck, ClipboardList, Boxes } from "lucide-react";
+import warehouseImg from "@/assets/warehouse-facility.jpeg";
 
 const fns = [
   {
@@ -37,13 +38,11 @@ export function WarehouseSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7 }}
-          className="grid grid-cols-12 gap-6 lg:gap-10"
+          className="grid grid-cols-12 items-center gap-10 lg:gap-16"
         >
-          <div className="col-span-12 lg:col-span-4">
+          <div className="col-span-12 lg:col-span-6">
             <span className="eyebrow">02 — Warehousing</span>
-          </div>
-          <div className="col-span-12 lg:col-span-8">
-            <h2 className="text-[clamp(2rem,4.6vw,4rem)] leading-[1.04] text-cream">
+            <h2 className="mt-6 text-[clamp(2rem,4.6vw,4rem)] leading-[1.04] text-cream">
               Advanced facilities,{" "}
               <span className="italic text-teal">crafted</span> for project cargo.
             </h2>
@@ -51,6 +50,16 @@ export function WarehouseSection() {
               A specialised facility used to store goods and inventory, protect products before
               sale or shipment, and manage stock with industrial precision.
             </p>
+          </div>
+          <div className="col-span-12 lg:col-span-6">
+            <div className="overflow-hidden rounded-lg">
+              <img
+                src={warehouseImg}
+                alt="Tera Projects warehouse exterior"
+                className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-105"
+                loading="lazy"
+              />
+            </div>
           </div>
         </motion.div>
 

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, FileCheck2, Truck, CalendarClock, MapPin } from "lucide-react";
 import { useLeadDialog } from "./LeadProvider";
+import distributionImg from "@/assets/distribution-hub.jpeg";
 
 const fns = [
   { n: "01", Icon: FileCheck2, title: "Order Processing", desc: "Validated workflows from purchase order to dispatch." },
@@ -23,13 +24,21 @@ export function DistributionSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7 }}
-          className="grid grid-cols-12 gap-6 lg:gap-10"
+          className="grid grid-cols-12 items-center gap-10 lg:gap-16"
         >
-          <div className="col-span-12 lg:col-span-4">
-            <span className="eyebrow">03 — Distribution</span>
+          <div className="order-2 col-span-12 lg:order-1 lg:col-span-6">
+            <div className="overflow-hidden rounded-lg">
+              <img
+                src={distributionImg}
+                alt="Tera Projects distribution hub"
+                className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-105"
+                loading="lazy"
+              />
+            </div>
           </div>
-          <div className="col-span-12 lg:col-span-8">
-            <h2 className="text-[clamp(2rem,4.6vw,4rem)] leading-[1.04] text-cream">
+          <div className="order-1 col-span-12 lg:order-2 lg:col-span-6">
+            <span className="eyebrow">03 — Distribution</span>
+            <h2 className="mt-6 text-[clamp(2rem,4.6vw,4rem)] leading-[1.04] text-cream">
               Seamless distribution,{" "}
               <span className="italic text-teal">orchestrated</span> end-to-end.
             </h2>
