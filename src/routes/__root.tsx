@@ -90,7 +90,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Tera Projects Warehouse Division — precision logistics, secure storage and multimodal distribution for heavy-lift and general cargo.",
       },
       { name: "theme-color", content: "#1A1F2C" },
-      { property: "og:title", content: "Tera Projects · Warehouse Division" },
+      { property: "og:title", content: "Tera Projects · Strategic Warehousing & Global Distribution" },
       {
         property: "og:description",
         content:
@@ -98,6 +98,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Tera Projects · Strategic Warehousing & Global Distribution" },
+      { name: "description", content: "Tera Projects Logistics provides strategic warehousing and global distribution services." },
+      { property: "og:description", content: "Tera Projects Logistics provides strategic warehousing and global distribution services." },
+      { name: "twitter:description", content: "Tera Projects Logistics provides strategic warehousing and global distribution services." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/cd358b67-7452-4db0-81f8-7fa0df0e2927/id-preview-87b2914c--b856c7d1-9793-43a0-9730-f941bbda33f8.lovable.app-1778583261675.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/cd358b67-7452-4db0-81f8-7fa0df0e2927/id-preview-87b2914c--b856c7d1-9793-43a0-9730-f941bbda33f8.lovable.app-1778583261675.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
