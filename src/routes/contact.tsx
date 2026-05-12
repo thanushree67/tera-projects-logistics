@@ -86,7 +86,7 @@ function ContactPage() {
             transition={{ duration: 0.6 }}
             className="max-w-2xl"
           >
-            <span className="text-[11px] font-semibold uppercase tracking-[0.3em] text-teal">
+            <span className="text-[11px] font-semibold uppercase tracking-[0.3em] text-brass">
               Contact
             </span>
             <h1 className="mt-3 text-4xl font-semibold sm:text-6xl">Let's move your cargo.</h1>
@@ -109,7 +109,7 @@ function ContactPage() {
                   <a
                     key={p}
                     href={`tel:${p.replace(/\s/g, "")}`}
-                    className="block text-foreground transition hover:text-teal"
+                    className="block text-foreground transition hover:text-brass"
                   >
                     {p}
                   </a>
@@ -120,7 +120,7 @@ function ContactPage() {
                   <a
                     key={e}
                     href={`mailto:${e}`}
-                    className="block break-all text-foreground transition hover:text-teal"
+                    className="block break-all text-foreground transition hover:text-brass"
                   >
                     {e}
                   </a>
@@ -157,7 +157,7 @@ function ContactPage() {
                     value={form.message}
                     onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
                     rows={4}
-                    className="w-full rounded-md border border-input bg-background/40 px-3 py-2.5 text-sm outline-none transition focus:border-teal focus:ring-2 focus:ring-teal/30"
+                    className="w-full rounded-md border border-input bg-background/40 px-3 py-2.5 text-sm outline-none transition focus:border-brass focus:ring-2 focus:ring-brass/30"
                   />
                 </label>
               </div>
@@ -188,8 +188,8 @@ function InfoCard({
 }) {
   return (
     <div className="rounded-2xl border border-border bg-card p-5 shadow-[var(--shadow-card)]">
-      <div className="flex items-center gap-2 text-teal">
-        <span className="flex h-8 w-8 items-center justify-center rounded-md bg-teal/10">{icon}</span>
+      <div className="flex items-center gap-2 text-brass">
+        <span className="flex h-8 w-8 items-center justify-center rounded-md bg-brass/10">{icon}</span>
         <span className="text-[11px] font-semibold uppercase tracking-[0.25em]">{title}</span>
       </div>
       <div className="mt-3 space-y-1 text-sm">{children}</div>
@@ -219,7 +219,7 @@ function Field({
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-md border border-input bg-background/40 px-3 py-2.5 text-sm outline-none transition focus:border-teal focus:ring-2 focus:ring-teal/30"
+        className="w-full rounded-md border border-input bg-background/40 px-3 py-2.5 text-sm outline-none transition focus:border-brass focus:ring-2 focus:ring-brass/30"
       />
       {error && <span className="mt-1 block text-xs text-destructive">{error}</span>}
     </label>
