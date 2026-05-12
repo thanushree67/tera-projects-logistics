@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import heroImg from "@/assets/warehouse-1.jpg";
+import heroImg from "@/assets/hero-bg.jpeg";
 import { useLeadDialog } from "./LeadProvider";
 
 export function Hero() {
@@ -24,7 +24,7 @@ export function Hero() {
       />
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-ink-deep/35"
+        className="absolute inset-0 -z-10 bg-ink-deep/50"
       />
 
       <div className="container-x relative flex min-h-[100svh] flex-col justify-center pt-32 pb-24">
