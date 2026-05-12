@@ -1,105 +1,142 @@
 import { motion } from "framer-motion";
-import { PackageCheck, ShieldCheck, ClipboardList, Boxes } from "lucide-react";
 import warehouseImg from "@/assets/warehouse-3.jpg";
 import accentImg from "@/assets/warehouse-4.jpg";
 
 const fns = [
-  { icon: PackageCheck, title: "Receiving Goods", desc: "Inbound inspection, unloading and dock-to-stock workflows." },
-  { icon: ShieldCheck, title: "Secure Storage", desc: "Climate-aware, surveilled facilities for high-value cargo." },
-  { icon: ClipboardList, title: "Inventory Control", desc: "Real-time SKU tracking with barcoded audit trails." },
-  { icon: Boxes, title: "Order Picking & Packing", desc: "Precision pick paths, custom kitting and export packing." },
+  {
+    n: "01",
+    title: "Receiving Goods",
+    desc: "Inbound inspection, unloading and dock-to-stock workflows handled by trained crews.",
+  },
+  {
+    n: "02",
+    title: "Secure Storage",
+    desc: "Climate-aware, surveilled facilities engineered for high-value and project cargo.",
+  },
+  {
+    n: "03",
+    title: "Inventory Control",
+    desc: "Real-time SKU tracking with barcoded audit trails and quarterly reconciliations.",
+  },
+  {
+    n: "04",
+    title: "Picking & Packing",
+    desc: "Precision pick paths, custom kitting and export-grade packing for any geometry.",
+  },
 ];
 
 export function WarehouseSection() {
   return (
-    <section id="warehouse" className="relative scroll-mt-24 py-24 sm:py-32">
+    <section id="warehouse" className="relative scroll-mt-24 py-28 sm:py-40">
+      {/* offset eyebrow */}
       <div className="container-x">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
-          className="max-w-2xl"
+          transition={{ duration: 0.7 }}
+          className="grid grid-cols-12 gap-6 lg:gap-10"
         >
-          <span className="text-[11px] font-semibold uppercase tracking-[0.3em] text-teal">
-            01 — Warehousing
-          </span>
-          <h2 className="mt-3 text-3xl font-semibold sm:text-5xl">
-            Advanced Warehouse Facilities
-          </h2>
-          <p className="mt-4 text-muted-foreground sm:text-lg">
-            A specialized facility used to store goods and inventory, protect products before sale
-            or shipment, and manage stock levels with industrial precision.
-          </p>
+          <div className="col-span-12 lg:col-span-4">
+            <span className="eyebrow">02 — Warehousing</span>
+          </div>
+          <div className="col-span-12 lg:col-span-8">
+            <h2 className="text-[clamp(2rem,4.6vw,4rem)] leading-[1.04] text-cream">
+              Advanced facilities,{" "}
+              <span className="italic text-brass">crafted</span> for project cargo.
+            </h2>
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-cream/65 sm:text-lg">
+              A specialised facility used to store goods and inventory, protect products before
+              sale or shipment, and manage stock with industrial precision.
+            </p>
+          </div>
         </motion.div>
 
-        <div className="mt-14 grid grid-cols-12 gap-4 sm:gap-5">
-          {/* Large image card */}
+        {/* Asymmetric broken grid */}
+        <div className="relative mt-20 grid grid-cols-12 gap-6 lg:gap-10">
+          {/* Tall offset image */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="relative col-span-12 overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-card)] lg:col-span-7 lg:row-span-2 min-h-[320px] lg:min-h-[520px]"
+            transition={{ duration: 0.9 }}
+            className="relative col-span-12 lg:col-span-5 lg:row-span-2 lg:translate-y-12"
           >
-            <img
-              src={warehouseImg}
-              alt="Modern Tera Projects warehouse facility exterior"
-              className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/30 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-              <div className="text-[11px] uppercase tracking-widest text-teal">Facility</div>
-              <div className="mt-1 font-display text-xl font-semibold sm:text-2xl">
-                Purpose-built infrastructure for project cargo
+            <div className="relative aspect-[3/4] overflow-hidden rounded-[2px] border border-cream/10 shadow-[var(--shadow-card)]">
+              <img
+                src={warehouseImg}
+                alt="Tera Projects warehouse facility"
+                className="duotone h-full w-full object-cover transition-transform duration-[1.2s] hover:scale-[1.04]"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink-deep/70 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <div className="font-mono text-[10px] uppercase tracking-[0.28em] text-brass">
+                  / Facility 01
+                </div>
+                <div className="mt-2 font-display text-2xl text-cream">
+                  Purpose-built infrastructure
+                </div>
               </div>
+            </div>
+            {/* tag */}
+            <div className="absolute -right-3 top-6 hidden rotate-90 origin-top-right font-mono text-[10px] uppercase tracking-[0.3em] text-cream/40 lg:block">
+              Tera · Warehouse Division
             </div>
           </motion.div>
 
-          {fns.map((f, i) => (
+          {/* Function list */}
+          <div className="col-span-12 lg:col-span-7">
+            <ul className="divide-y divide-cream/10 border-y border-cream/10">
+              {fns.map((f, i) => (
+                <motion.li
+                  key={f.n}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.07 }}
+                  className="group grid grid-cols-12 items-baseline gap-4 py-7 transition-colors hover:bg-cream/[0.02] sm:py-8"
+                >
+                  <span className="col-span-2 font-mono text-xs uppercase tracking-widest text-brass sm:col-span-1">
+                    {f.n}
+                  </span>
+                  <div className="col-span-10 sm:col-span-4">
+                    <h3 className="font-display text-xl font-medium text-cream transition-colors group-hover:text-brass sm:text-2xl">
+                      {f.title}
+                    </h3>
+                  </div>
+                  <p className="col-span-12 text-sm leading-relaxed text-cream/60 sm:col-span-7">
+                    {f.desc}
+                  </p>
+                </motion.li>
+              ))}
+            </ul>
+
+            {/* small accent image, intentionally narrower */}
             <motion.div
-              key={f.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group relative col-span-6 flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-[image:var(--gradient-surface)] p-5 shadow-[var(--shadow-card)] sm:col-span-6 lg:col-span-5 lg:p-6 lg:[&:nth-child(even)]:col-span-5"
+              transition={{ duration: 0.7 }}
+              className="relative mt-12 ml-auto w-full max-w-md overflow-hidden rounded-[2px] border border-cream/10"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-teal/30 bg-teal/10 text-teal transition group-hover:bg-teal group-hover:text-primary-foreground">
-                <f.icon className="h-5 w-5" />
-              </div>
-              <div className="mt-6">
-                <div className="font-display text-lg font-semibold">{f.title}</div>
-                <p className="mt-1.5 text-sm text-muted-foreground">{f.desc}</p>
-              </div>
-              <div className="mt-4 text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
-                Function · {String(i + 1).padStart(2, "0")}
+              <img
+                src={accentImg}
+                alt="Loading dock operations"
+                className="duotone aspect-[16/9] w-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-ink-deep/70 via-transparent to-transparent" />
+              <div className="absolute inset-y-0 left-0 flex flex-col justify-center p-6">
+                <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-brass">
+                  / Operations
+                </span>
+                <span className="mt-1 max-w-[16ch] font-display text-lg text-cream">
+                  Integrated dock throughput
+                </span>
               </div>
             </motion.div>
-          ))}
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative col-span-12 overflow-hidden rounded-2xl border border-border min-h-[180px]"
-          >
-            <img
-              src={accentImg}
-              alt="Tera Projects loading dock"
-              className="absolute inset-0 h-full w-full object-cover"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/40 to-transparent" />
-            <div className="relative flex h-full flex-col justify-center p-6 sm:p-10">
-              <div className="text-[11px] uppercase tracking-widest text-teal">Operations</div>
-              <div className="mt-2 max-w-md font-display text-xl font-semibold sm:text-2xl">
-                Integrated dock operations engineered for throughput
-              </div>
-            </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
