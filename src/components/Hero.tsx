@@ -33,7 +33,7 @@ export function Hero() {
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.6 }}
   /* Added text-2xl (larger) and font-medium for a premium look */
-  className="eyebrow text-2xl font-medium tracking-widest uppercase"
+  className="eyebrow text-4xl"
 >
   001 — Tera Warehousing
 </motion.span>
