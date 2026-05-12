@@ -33,6 +33,7 @@
   --color-cream: var(--cream);
   --color-brass: var(--brass);
   --color-brass-glow: var(--brass-glow);
+  --color-teal: var(--teal);
   --font-display: "Playfair Display", "Prata", ui-serif, Georgia, serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
@@ -41,51 +42,47 @@
 :root {
   --radius: 0.375rem;
 
-  /* Editorial Charcoal palette */
-  --ink-deep: oklch(0.21 0.018 250);   /* deep charcoal navy */
-  --ink: oklch(0.27 0.02 250);
-  --cream: oklch(0.975 0.012 85);       /* warm off-white #FBFBFB-ish */
-  --brass: oklch(0.74 0.11 70);         /* warm brass/copper accent */
-  --brass-glow: oklch(0.84 0.10 75);
+  /* Industrial Navy palette */
+  --ink-deep: oklch(0.22 0.07 252);     /* #001C3F industrial navy */
+  --ink: oklch(0.30 0.06 252);
+  --cream: oklch(0.985 0.002 95);       /* #FBFBFB soft cream */
+  --teal: oklch(0.72 0.10 195);         /* refined teal accent */
+
+  /* Legacy brass tokens redirected to teal so any leftover refs stay on-brand */
+  --brass: var(--teal);
+  --brass-glow: oklch(0.82 0.08 195);
 
   --background: var(--ink-deep);
   --foreground: var(--cream);
 
-  --card: oklch(0.25 0.018 250);
+  --card: oklch(0.27 0.06 252);
   --card-foreground: var(--cream);
-  --popover: oklch(0.25 0.018 250);
+  --popover: oklch(0.25 0.06 252);
   --popover-foreground: var(--cream);
 
-  --primary: var(--brass);
-  --primary-foreground: oklch(0.18 0.018 250);
+  --primary: var(--cream);
+  --primary-foreground: var(--ink-deep);
 
-  --secondary: oklch(0.30 0.018 250);
+  --secondary: oklch(0.32 0.05 252);
   --secondary-foreground: var(--cream);
 
-  --muted: oklch(0.28 0.015 250);
-  --muted-foreground: oklch(0.72 0.012 80);
+  --muted: oklch(0.30 0.04 252);
+  --muted-foreground: oklch(0.78 0.01 252);
 
-  --accent: var(--brass);
-  --accent-foreground: oklch(0.18 0.018 250);
+  --accent: var(--teal);
+  --accent-foreground: var(--ink-deep);
 
   --destructive: oklch(0.62 0.18 25);
   --destructive-foreground: var(--cream);
 
-  --border: oklch(0.97 0.01 85 / 10%);
-  --input: oklch(0.97 0.01 85 / 14%);
-  --ring: var(--brass);
+  --border: oklch(0.97 0.01 95 / 12%);
+  --input: oklch(0.97 0.01 95 / 14%);
+  --ring: var(--teal);
 
-  --gradient-hero: linear-gradient(180deg, oklch(0.21 0.018 250 / 0.35) 0%, oklch(0.21 0.018 250 / 0.92) 95%);
-  --gradient-accent: linear-gradient(135deg, var(--brass) 0%, var(--brass-glow) 100%);
-  --gradient-surface: linear-gradient(170deg, oklch(0.27 0.02 250) 0%, oklch(0.21 0.018 250) 100%);
-  --gradient-cream: linear-gradient(180deg, oklch(0.975 0.012 85) 0%, oklch(0.94 0.018 80) 100%);
+  --gradient-hero: linear-gradient(180deg, oklch(0.22 0.07 252 / 0.55) 0%, oklch(0.22 0.07 252 / 0.95) 100%);
+  --gradient-surface: linear-gradient(180deg, oklch(0.24 0.06 252) 0%, oklch(0.22 0.07 252) 100%);
 
-  --shadow-elegant: 0 30px 80px -30px color-mix(in oklab, var(--brass) 30%, transparent);
   --shadow-card: 0 20px 50px -20px oklch(0 0 0 / 0.55);
-  --shadow-soft: 0 1px 0 0 oklch(1 0 0 / 0.04) inset, 0 12px 30px -18px oklch(0 0 0 / 0.5);
-
-  /* Duotone filter — apply to <img> for editorial cohesion */
-  --duotone-warm: contrast(1.05) saturate(0.55) sepia(0.18) hue-rotate(-8deg) brightness(0.96);
 }
 
 .dark {
@@ -107,19 +104,6 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
-    font-feature-settings: "ss01", "cv11";
-  }
-
-  /* Subtle film grain across the whole site for tactile feel */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 60;
-    opacity: 0.06;
-    mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
   }
 
   h1, h2, h3, h4 {
@@ -129,7 +113,6 @@
     line-height: 1.05;
   }
 
-  /* Tabular figures look stronger in stats */
   .num {
     font-variant-numeric: tabular-nums;
   }
@@ -142,19 +125,15 @@
   max-width: 1240px;
 }
 
-@utility duotone {
-  filter: var(--duotone-warm);
-}
-
 @utility eyebrow {
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--color-brass);
+  color: var(--color-teal);
 }
 
 @utility hairline {
   height: 1px;
-  background: linear-gradient(90deg, transparent, oklch(0.97 0.01 85 / 0.25), transparent);
+  background: linear-gradient(90deg, transparent, oklch(0.97 0.01 95 / 0.2), transparent);
 }
