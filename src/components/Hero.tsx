@@ -39,7 +39,7 @@ export function Hero() {
   <img 
     src={logo}
     alt="Tera Logo" 
-    className="h-10 w-auto object-contain" 
+    className="h-16 w-auto object-contain" 
   />
   <span className="text-teal-400 font-bold text-2xl tracking-widest">
     WAREHOUSING
