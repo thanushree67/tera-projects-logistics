@@ -38,7 +38,7 @@ const contacts = [
   },
   {
     name: "Deepak Kumar",
-    role: "Logistics Manager",
+    role: "",
     phone: "+91 98403 04615",
     email: "deepak.s@teraship.com",
   },
@@ -183,9 +183,11 @@ export function Facilities() {
               <div className="font-display text-base font-medium text-cream">
                 {c.name}
               </div>
-              <div className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.22em] text-teal">
-                {c.role}
-              </div>
+              {c.role && (
+                <div className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.22em] text-teal">
+                  {c.role}
+                </div>
+              )}
               <div className="mt-3 space-y-1.5">
                 <a
                   href={`tel:${c.phone.replace(/\s/g, "")}`}
