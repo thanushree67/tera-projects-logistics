@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { Phone, Mail, ArrowUpRight } from "lucide-react";
 import logo from "@/assets/tera-logo.png";
 import { useLeadDialog } from "./LeadProvider";

@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { useState } from "react";
@@ -6,25 +5,6 @@ import { z } from "zod";
 import { supabase, isSupabaseConfigured } from "@/lib/supabase";
 import { toast } from "sonner";
 import { SiteFooter } from "@/components/SiteFooter";
-
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact · Tera Projects Warehouse Division" },
-      {
-        name: "description",
-        content:
-          "Speak to Tera Projects about warehousing, distribution, or heavy-lift logistics. Get a quote within one business day.",
-      },
-      { property: "og:title", content: "Contact · Tera Projects" },
-      {
-        property: "og:description",
-        content: "Reach Tera Projects for warehousing & distribution enquiries.",
-      },
-    ],
-  }),
-  component: ContactPage,
-});
 
 const schema = z.object({
   name: z.string().trim().min(2).max(100),
@@ -36,7 +16,7 @@ const schema = z.object({
 const phones = ["+91 98403 04615", "+91 88700 38324"];
 const emails = ["premnath.v@teraship.com", "deepak.s@teraship.com"];
 
-function ContactPage() {
+export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -164,7 +144,7 @@ function ContactPage() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-[image:var(--gradient-accent)] px-5 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-elegant)] transition hover:brightness-110 disabled:opacity-60 sm:w-auto"
+                className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-cream px-5 py-3 text-sm font-semibold text-ink-deep transition hover:bg-teal hover:text-cream disabled:opacity-60 sm:w-auto"
               >
                 {submitting ? "Sending…" : "Enquire Us"}
               </button>
