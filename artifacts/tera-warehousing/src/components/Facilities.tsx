@@ -1,44 +1,51 @@
 import { motion, type Transition } from "framer-motion";
 import {
-  Thermometer,
   ShieldCheck,
-  Zap,
   Truck,
-  BarChart3,
   Cctv,
-  Flame,
   Container,
   Phone,
   Mail,
+  Clock,
+  ArrowUpDown,
+  Star,
+  Layers,
+  CheckCircle2,
 } from "lucide-react";
 
 const featureIcons = [
-  { Icon: Thermometer, label: "Climate Control" },
-  { Icon: ShieldCheck, label: "24/7 Security" },
-  { Icon: Zap, label: "Power Backup" },
-  { Icon: Truck, label: "Loading Docks" },
-  { Icon: BarChart3, label: "Inventory WMS" },
-  { Icon: Cctv, label: "CCTV Surveillance" },
-  { Icon: Flame, label: "Fire Suppression" },
-  { Icon: Container, label: "Container Yard" },
+  { Icon: Clock,       label: "24 x 7 Road Accessibility" },
+  { Icon: Cctv,        label: "CCTV Surveillance & Security Monitoring" },
+  { Icon: ArrowUpDown, label: "Ramp Loading & Unloading Facilities" },
+  { Icon: Star,        label: "Suitable for Valuable & Project Cargo" },
+  { Icon: Truck,       label: "Spacious Truck Movement Area" },
+  { Icon: Layers,      label: "Flexible Storage Options for all Cargo Types" },
+];
+
+const suitableFor = [
+  "General cargo",
+  "Industrial materials",
+  "Project cargo",
+  "Import / export storage",
+  "Distribution and logistics operations",
 ];
 
 const contacts = [
   {
-    name: "Premnath V.",
+    name: "Premnath Venugopal",
     role: "Managing Director",
     phone: "+91 98403 04615",
     email: "premnath.v@teraship.com",
   },
   {
-    name: "Keethana P.",
+    name: "Keethana Premnathv",
     role: "General Manager",
     phone: "+91 73581 05215",
     email: "keethana.p@teraship.com",
   },
   {
     name: "Deepak Kumar",
-    role: "",
+    role: "Logistics Manager",
     phone: "+91 88700 38324",
     email: "deepak.s@teraship.com",
   },
@@ -68,70 +75,51 @@ export function Facilities() {
         <div className="font-mono text-[10px] uppercase tracking-[0.28em] text-teal mb-4">
           / Available Space
         </div>
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-          {[
-            { v: "500K+", u: "sq ft", l: "Total Secured Area" },
-            { v: "40 ft", u: "clear height", l: "Racking Clearance" },
-            { v: "100T", u: "capacity", l: "Heavy-Lift Bay" },
-            { v: "12", u: "loading bays", l: "Dock-Level Access" },
-            { v: "5 acres", u: "yard", l: "Container Staging" },
-            { v: "Class A", u: "grade", l: "Facility Rating" },
-          ].map((s, i) => (
-            <motion.div
-              key={s.l}
-              {...fadeUp(0.06 + i * 0.04)}
-              className="rounded-sm border border-cream/10 bg-card px-4 py-4"
-            >
-              <div className="num font-display text-2xl font-medium text-cream">
-                {s.v}
-              </div>
-              <div className="mt-0.5 text-[10px] uppercase tracking-[0.18em] text-teal">
-                {s.u}
-              </div>
-              <div className="mt-2 text-xs text-cream/55">{s.l}</div>
-            </motion.div>
-          ))}
+        <div className="rounded-sm border border-cream/10 bg-card px-6 py-6 flex flex-col sm:flex-row sm:items-center gap-2">
+          <div className="font-display text-3xl font-medium text-cream">
+            5,000 – 50,000
+          </div>
+          <div className="flex flex-col sm:ml-3">
+            <div className="text-sm uppercase tracking-[0.18em] text-teal font-medium">
+              sq ft
+            </div>
+            <div className="mt-0.5 text-xs text-cream/55">
+              Flexible Space Options
+            </div>
+          </div>
         </div>
       </motion.div>
 
-      {/* Primary Locations */}
+      {/* Available Locations */}
       <motion.div {...fadeUp(0.12)}>
         <div className="font-mono text-[10px] uppercase tracking-[0.28em] text-teal mb-4">
-          / Primary Locations
+          / Available Locations
         </div>
         <ul className="space-y-3">
-          {[
-            { city: "Chennai", detail: "Port-adjacent facility — 220,000 sq ft" },
-            { city: "Mumbai", detail: "Multimodal logistics hub — 180,000 sq ft" },
-            { city: "Delhi NCR", detail: "Inland container depot — 100,000 sq ft" },
-          ].map((loc, i) => (
+          {["Madhavaram", "Arakkonam", "Sholavaram"].map((loc, i) => (
             <motion.li
-              key={loc.city}
+              key={loc}
               {...fadeUp(0.1 + i * 0.05)}
-              className="flex items-start gap-4 rounded-sm border border-cream/10 bg-card px-5 py-4"
+              className="flex items-center gap-4 rounded-sm border border-cream/10 bg-card px-5 py-4"
             >
-              <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />
-              <div>
-                <div className="text-sm font-medium text-cream">{loc.city}</div>
-                <div className="mt-0.5 text-xs text-cream/55">{loc.detail}</div>
-              </div>
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />
+              <div className="text-sm font-medium text-cream">{loc}</div>
             </motion.li>
           ))}
         </ul>
       </motion.div>
 
-      {/* Strategic Connectivity */}
+      {/* Connectivity Points */}
       <motion.div {...fadeUp(0.14)}>
         <div className="font-mono text-[10px] uppercase tracking-[0.28em] text-teal mb-4">
-          / Strategic Connectivity
+          / Connectivity Points
         </div>
         <ul className="space-y-2.5">
           {[
-            "Direct port gate-in / gate-out access within 3 km",
-            "NH-expressway frontage for long-haul FTL lanes",
-            "Dedicated rail siding for break-bulk & project cargo",
-            "Air-freight feeder routes via nearest international airports",
-            "Customs bonded zone with in-house CHA team",
+            "Chennai Port",
+            "Kamarajar Port",
+            "Chennai International Airport",
+            "North Chennai Industrial & Logistics Corridors",
           ].map((item, i) => (
             <motion.li
               key={i}
@@ -150,7 +138,7 @@ export function Facilities() {
         <div className="font-mono text-[10px] uppercase tracking-[0.28em] text-teal mb-5">
           / Warehouse Features
         </div>
-        <div className="grid grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
           {featureIcons.map(({ Icon, label }, i) => (
             <motion.div
               key={label}
@@ -161,12 +149,31 @@ export function Facilities() {
                 className="h-5 w-5 text-teal transition-transform duration-300 group-hover:scale-110"
                 strokeWidth={1.25}
               />
-              <span className="text-center text-[10px] uppercase tracking-[0.18em] text-cream/60">
+              <span className="text-center text-[10px] uppercase tracking-[0.15em] text-cream/60 leading-relaxed">
                 {label}
               </span>
             </motion.div>
           ))}
         </div>
+      </motion.div>
+
+      {/* Suitable For */}
+      <motion.div {...fadeUp(0.18)}>
+        <div className="font-mono text-[10px] uppercase tracking-[0.28em] text-teal mb-4">
+          / Suitable For
+        </div>
+        <ul className="space-y-2.5">
+          {suitableFor.map((item, i) => (
+            <motion.li
+              key={i}
+              {...fadeUp(0.16 + i * 0.03)}
+              className="flex items-center gap-3 text-sm text-cream/70"
+            >
+              <CheckCircle2 className="h-4 w-4 shrink-0 text-teal" strokeWidth={1.5} />
+              {item}
+            </motion.li>
+          ))}
+        </ul>
       </motion.div>
 
       {/* Hairline */}
