@@ -33,13 +33,13 @@ const contacts = [
   {
     name: "Keethana P.",
     role: "General Manager",
-    phone: "+91 88700 38324",
+    phone: "+91 73581 05215",
     email: "keethana.p@teraship.com",
   },
   {
     name: "Deepak Kumar",
     role: "",
-    phone: "+91 98403 04615",
+    phone: "+91 88700 38324",
     email: "deepak.s@teraship.com",
   },
 ];
