@@ -37,7 +37,7 @@ export function Hero() {
           <h2 className="font-sans text-3xl font-extrabold uppercase tracking-[0.18em] text-teal sm:text-4xl">
             <div className="flex items-center gap-2 mb-4">
   <img 
-    src="logo" 
+    src={logo}
     alt="Tera Logo" 
     className="h-10 w-auto object-contain" 
   />
