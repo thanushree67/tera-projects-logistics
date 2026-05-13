@@ -3,7 +3,7 @@
 import handler from "@tanstack/react-start/server-entry";
 
 export const config = {
-  runtime: "nodejs20.x",
+  runtime: "nodejs",
 };
 
 type FetchHandler = {
