@@ -35,13 +35,16 @@ export function Hero() {
           className="flex items-center gap-5"
         >
           <h2 className="font-sans text-3xl font-extrabold uppercase tracking-[0.18em] text-teal sm:text-4xl">
-            <img
-        src={heroImg}
-        alt="Tera Projects warehouse facility"
-        className="absolute inset-0 -z-10 h-full w-full object-cover"
-        loading="eager"
-        fetchPriority="high"
-      /> Warehousing
+            <div className="flex items-center gap-2 mb-4">
+  <img 
+    src="/logo.png" 
+    alt="Tera Logo" 
+    className="h-10 w-auto object-contain" 
+  />
+  <span className="text-teal-400 font-bold text-2xl tracking-widest">
+    WAREHOUSING
+  </span>
+</div>
           </h2>
           <span aria-hidden className="hidden h-px flex-1 max-w-[260px] bg-teal/50 sm:block" />
         </motion.div>
