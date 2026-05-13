@@ -28,25 +28,25 @@ export function Hero() {
       />
 
       <div className="container-x relative flex min-h-[100svh] flex-col justify-center pt-32 pb-24">
-        <motion.span
-  initial={{ opacity: 0, y: 8 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6 }}
-  /* Added text-2xl (larger) and font-medium for a premium look */
-  className="eyebrow text-4xl"
->
-  001 — Tera Warehousing
-</motion.span>
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.9, ease: [0.2, 0.8, 0.2, 1] }}
+          className="flex items-center gap-5"
+        >
+          <h2 className="font-sans text-3xl font-extrabold uppercase tracking-[0.18em] text-teal sm:text-4xl">
+            Tera Warehousing
+          </h2>
+          <span aria-hidden className="hidden h-px flex-1 max-w-[260px] bg-teal/50 sm:block" />
+        </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.2, 0.8, 0.2, 1] }}
-          className="mt-6 max-w-5xl text-[clamp(2.6rem,7vw,6.25rem)] font-normal leading-[1.02] text-cream"
+          transition={{ delay: 0.25, duration: 0.9, ease: [0.2, 0.8, 0.2, 1] }}
+          className="mt-6 max-w-5xl text-[clamp(2rem,5.5vw,4.5rem)] font-normal leading-[1.05] text-cream"
         >
-          Strategic Warehousing
-          <br />
-          <span className="italic text-teal">&amp;</span> Global Distribution
+          Strategic Warehousing <span className="italic text-cream/90">&amp;</span> Global Distribution
         </motion.h1>
 
         <motion.p
