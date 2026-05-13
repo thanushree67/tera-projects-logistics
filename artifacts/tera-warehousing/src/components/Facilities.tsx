@@ -38,14 +38,14 @@ const contacts = [
     email: "premnath.v@teraship.com",
   },
   {
-    name: "Keethana Premnathv",
+    name: "Keerthana Premnath",
     role: "General Manager",
     phone: "+91 73581 05215",
     email: "keethana.p@teraship.com",
   },
   {
     name: "Deepak Kumar",
-    role: "Logistics Manager",
+    role: "",
     phone: "+91 88700 38324",
     email: "deepak.s@teraship.com",
   },
