@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Tera Warehousing"
+version = "1.0.0"
+id = "artifacts/tera-warehousing"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19551
+
+[services.development]
+run = "pnpm --filter @workspace/tera-warehousing run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/tera-warehousing", "run", "build" ]
+publicDir = "artifacts/tera-warehousing/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19551"
+BASE_PATH = "/"
