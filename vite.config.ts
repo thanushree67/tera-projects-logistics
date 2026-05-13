@@ -5,8 +5,8 @@ import tailwindcss from "@tailwindcss/vite";
 import tsConfigPaths from "vite-tsconfig-paths";
 import path from "node:path";
 
-// Targets Vercel via TanStack Start's built-in Nitro preset.
-// `vercel` produces .vercel/output that Vercel auto-detects.
+// Vercel-friendly TanStack Start config (no Cloudflare plugin).
+// The SSR build is wrapped by api/index.ts as a Vercel Node Function.
 export default defineConfig({
   resolve: {
     alias: {
@@ -18,7 +18,6 @@ export default defineConfig({
     tsConfigPaths(),
     tailwindcss(),
     tanstackStart({
-      target: "vercel",
       customViteReactPlugin: true,
     }),
     viteReact(),
